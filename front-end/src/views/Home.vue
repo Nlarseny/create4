@@ -92,17 +92,17 @@ export default {
     selectProject(project) {
       this.project = project;
       this.project_id = project._id;
-      console.log(this.project);
+      //console.log(this.project);
     },
     async getItems() {
     try {
       let response = await axios.get('/api/projects/' + this.project._id + '/items');
       //console.log(response.data);
       this.items = response.data;
-      console.log(this.items);
+      //console.log(this.items);
       return true;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
     },
     async getPeople() {
@@ -111,7 +111,7 @@ export default {
       this.people = response.data;
       return true;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
     },
   }

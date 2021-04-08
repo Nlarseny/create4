@@ -158,7 +158,7 @@ export default {
   selectProject(project) {
     this.project = project;
     this.project_id = project._id;
-    console.log(this.project);
+    //console.log(this.project);
   },
 
   async editPerson(person) {
@@ -173,7 +173,7 @@ export default {
     this.getPeople();
     return true;
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
   },
 
@@ -184,7 +184,7 @@ export default {
       this.getPeople();
       return true;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   },
 
@@ -198,7 +198,7 @@ export default {
       });
       this.addPerson = r2.data;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   },
   async getPeople() {
@@ -207,7 +207,7 @@ export default {
     this.people = response.data;
     return true;
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
   },
 
@@ -219,7 +219,7 @@ export default {
     this.items = response.data;
     return true;
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
   },
 
@@ -234,7 +234,7 @@ export default {
     var cur_day = currentdate.getDay();
     var cur_min = currentdate.getMinutes();
     var cur_hour = currentdate.getHours();
-    console.log(this.project._id);
+    //console.log(this.project._id);
     try {
 
       await axios.post('/api/projects/' + this.project._id + '/items', {
@@ -249,7 +249,7 @@ export default {
       });
 
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   },
   selectItem(item) {
@@ -267,15 +267,15 @@ export default {
       await axios.delete('/api/projects/' + this.project._id + '/items/' + item._id);
       this.findItem = null;
       this.getItems();
-      console.log(item);
+      //console.log(item);
       return true;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   },
 
   async editItem(item) {
-  console.log(item);
+  //console.log(item);
   var currentdate = new Date();
     var cur_month = currentdate.getMonth();
     var cur_year = currentdate.getFullYear();
@@ -296,7 +296,7 @@ export default {
     this.getItems();
     return true;
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 },
 },
