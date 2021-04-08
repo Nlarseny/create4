@@ -1,10 +1,19 @@
 <template>
 <div class="form">
-<h2>Who is this for?</h2>
+<h2>Choose person (go to the editor to make a new one and new notes)</h2>
 <div class="suggestions" v-if="suggestions_people.length > 0">
   <button v-for="sp in suggestions_people" :key="sp.id" @click="selectProject(sp)">{{sp.name}}
   </button>
+
+  <div v-if="project != null">
+    <p>Name: {{project.name}}</p>
+    <p>Age: {{project.age}}</p>
+    <p>Position: {{project.position}}</p>
+    <p>Info: {{project.info}}</p>
+  </div>
 </div>
+
+
 
 <div class="products">
     <div class="product" v-for="item in suggestions" :key="item.id">

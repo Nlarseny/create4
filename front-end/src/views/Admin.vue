@@ -63,6 +63,10 @@
         <div class="form">
           <h2>Name</h2>
           <input v-model="name" placeholder="Name">
+          <h2>Age</h2>
+          <input v-model="age" placeholder="Age">
+          <h2>Position</h2>
+          <input v-model="position" placeholder="Position">
           <p></p>
           <h2>Info</h2>
           <form v-on:submit.prevent="upload">
@@ -87,7 +91,9 @@
           </div>
           <div class="upload" v-if="findPerson">
             <input v-model="findPerson.name">
+            <input v-model="findPerson.age">
             <input v-model="findPerson.info">
+            <input v-model="findPerson.position">
             <p></p>
           </div>
           <div class="actions" v-if="findPerson">
@@ -122,6 +128,8 @@ export default {
       people: [],
       name: "",
       info: "",
+      age: "",
+      position: "",
       findTitle: "",
       findItem: null,
       findPerson: null,
@@ -158,6 +166,8 @@ export default {
     await axios.put("/api/projects/" + person._id, {
       name: this.findPerson.name,
       info: this.findPerson.info,
+      age: this.findPerson.age,
+      position: this.findPerson.position,
     });
     this.findPerson = null;
     this.getPeople();
@@ -183,7 +193,8 @@ export default {
       let r2 = await axios.post('/api/projects', {
         name: this.name,
         info: this.info,
-
+        age: this.age,
+        position: this.position,
       });
       this.addPerson = r2.data;
     } catch (error) {

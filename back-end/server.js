@@ -17,7 +17,9 @@ mongoose.connect('mongodb://localhost:27017/notes', {
 // Create a scheme for projects
 const projectSchema = new mongoose.Schema({
   name: String,
-  info: String
+  info: String,
+  position: String,
+  age: String,
 });
 
 // Create a model for projects
@@ -47,7 +49,9 @@ const Item = mongoose.model('Item', itemSchema);
 app.post('/api/projects', async (req, res) => {
   const project = new Project({
     name: req.body.name,
-    info: req.body.info
+    info: req.body.info,
+    postion: req.body.position,
+    age: req.body.age,
   });
 	console.log(req.body.name);
   try {
@@ -97,7 +101,8 @@ app.put('/api/projects/:id', async (req, res) => {
 
     project.name = req.body.name;
     project.info = req.body.info;
-    
+    project.position = req.body.position;
+    project.age = req.body.age;
     project.save();
   } catch (error) {
     console.log(error);
