@@ -25,8 +25,12 @@
   <div class="content">
     <router-view />
   </div>
+
+
+
+
   <div class="footer">
-    <router-link to="/admin">Admin</router-link>
+    <div class="text-center p-3" > 2021 Copyright (maybe): <a href="https://github.com/Nlarseny/create4" target="_blank" class="text-dark">Github Classroom Link</a></div>
   </div>
 </div>
 </template>
