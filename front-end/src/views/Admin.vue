@@ -145,6 +145,7 @@ export default {
       return items.sort((a, b) => a.title > b.title);
     },
     suggestions_people() {
+      this.getPeople();
       let people = this.people.filter(person => person.name.toLowerCase().startsWith(this.findTitle.toLowerCase()));
       return people.sort((a, b) => a.name > b.name);
     }
